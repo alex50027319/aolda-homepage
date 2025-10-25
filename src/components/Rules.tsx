@@ -1,29 +1,28 @@
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+import Icon from './common/Icon';
+
+interface Rule {
+  icon: string;
+  title: string;
+  description: string;
+}
+
 export default function Rules() {
-  const rules = [
+  const { ref: rulesRef, hasIntersected } = useIntersectionObserver({ threshold: 0.2 });
+
+  const rules: Rule[] = [
     {
-      icon: (
-        <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-          <path d="M3 3h18v18H3z M8 7h8 M8 12h8 M8 17h5"/>
-        </svg>
-      ),
+      icon: 'document',
       title: '상업적 사용 금지',
       description: '아주대학교 SW사업단 정책에 따라, \n아올다 클라우드를 이용해 상업적 성격의 서비스를 운용할 수 없어요',
     },
     {
-      icon: (
-        <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-          <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0 M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0 M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855"/>
-        </svg>
-      ),
+      icon: 'user',
       title: '계정대여 금지',
       description: '아주대학교 SW사업단 정책에 따라,\n아주대학교 구성원이 아닌 외부인은 \n아올다 클라우드를 사용할 수 없어요',
     },
     {
-      icon: (
-        <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-          <path d="M7 10h3v-3l-3.5 -3.5a6 6 0 0 1 8 8l6 6a2 2 0 0 1 -3 3l-6 -6a6 6 0 0 1 -8 -8l3.5 3.5"/>
-        </svg>
-      ),
+      icon: 'lock',
       title: '인프라 무단조작 금지',
       description: '아올다 클라우드는 팔달관 334호에서 실제 물리서버를 볼 수 있지만,\n 보다 안정적인 운영을 위해\n조작행위는 금지해요',
     },
@@ -34,7 +33,9 @@ export default function Rules() {
       <div className="max-w-[1280px] mx-auto px-6">
         <div className="max-w-[996px] mx-auto flex flex-col gap-12">
           {/* Header */}
-          <div className="flex flex-col gap-6">
+          <div className={`flex flex-col gap-6 transition-all duration-700 ${
+            hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}>
             <div className="flex items-stretch gap-2.5">
               <h2 className="text-2xl font-bold text-gray-400 leading-[1.45]">
                 자유롭게 꿈을 펼치기 위해<br/>
@@ -48,14 +49,17 @@ export default function Rules() {
           </div>
 
           {/* Rules Grid */}
-          <div className="flex gap-9 px-[60px]">
+          <div ref={rulesRef} className="flex flex-col lg:flex-row gap-9 px-0 lg:px-[60px]">
             {rules.map((rule, index) => (
               <div
                 key={index}
-                className="flex-1 flex flex-col items-center gap-12 p-8 border-2 border-gray-200 rounded-2xl"
+                className={`flex-1 flex flex-col items-center gap-12 p-8 border-2 border-gray-200 rounded-2xl transition-all duration-700 hover:border-red-200 hover:shadow-lg ${
+                  hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                }`}
+                style={{ transitionDelay: `${index * 200}ms` }}
               >
-                <div className="w-[72px] h-[72px] flex items-center justify-center text-white">
-                  {rule.icon}
+                <div className="w-[72px] h-[72px] flex items-center justify-center text-red-500 bg-red-50 rounded-2xl">
+                  <Icon name={rule.icon} size={36} />
                 </div>
                 <div className="flex flex-col items-center gap-1.5 text-center">
                   <h3 className="text-base font-bold text-red-500">{rule.title}</h3>
@@ -71,5 +75,6 @@ export default function Rules() {
     </section>
   );
 }
+
 
 
