@@ -1,17 +1,13 @@
-# AOLDA Homepage Project
+# AOLDA Homepage Project(클론 코딩)
+Figma MCP + Cursor AI 활용하여 웹페이지 제작
 
-아주대학교 교내 클라우드 인프라 개발/운영 소학회 **아올다(AOLDA)** 공식 홈페이지입니다.
+## ✨ 기술
 
-Figma 디자인을 기반으로 제작된 현대적이고 반응형 웹사이트입니다.
-
-## ✨ 주요 기능
-
-- 🎨 Figma 디자인 기반의 픽셀 퍼펙트 구현
-- 📱 완전한 반응형 디자인
-- ⚡ Vite를 활용한 빠른 빌드와 개발 경험
-- 🎯 TypeScript로 타입 안정성 보장
-- 💅 Tailwind CSS를 활용한 유틸리티 퍼스트 스타일링
-- 🔧 쉬운 커스터마이징
+- 🎨 Figma
+- ⚡ Vite
+- 🎯 TypeScript
+- 💅 Tailwind CSS
+- 향후 Docker + Github Actions로 CI/CD 구현 예정?? 
 
 ## 📋 섹션 구성
 
@@ -80,47 +76,3 @@ src/
 └── index.css              # 글로벌 스타일
 ```
 
-## 🎯 커스터마이징
-
-### 색상 변경
-
-`tailwind.config.js` 파일에서 색상을 수정할 수 있습니다:
-
-```js
-colors: {
-  primary: {
-    500: '#0E76C4', // 메인 컬러
-    // 다른 shade 값들...
-  },
-}
-```
-
-### 콘텐츠 수정
-
-각 컴포넌트 파일(`src/components/`)에서 텍스트와 데이터를 수정할 수 있습니다.
-
-### 레이아웃 조정
-
-Tailwind CSS의 유틸리티 클래스를 사용하여 간편하게 레이아웃을 조정할 수 있습니다.
-
-## 🛠 기술 스택
-
-- **React 19** - UI 라이브러리
-- **TypeScript 5** - 타입 안정성
-- **Vite 7** - 빌드 도구 및 개발 서버
-- **Tailwind CSS 4** - 유틸리티 퍼스트 CSS 프레임워크
-- **React Router** - 라우팅 (필요시)
-
-## 🔗 관련 링크
-
-- [Figma 디자인 파일](https://www.figma.com/design/WhAbWCMqZRapUXu4Eu3XIT/AHP---Aolda-Homepage-Project)
-- [아올다 소학회 소개](#)
-- [아올다 클라우드 콘솔](#)
-
-## 📝 라이선스
-
-MIT
-
----
-
-Made with ❤️ by AOLDA Team
