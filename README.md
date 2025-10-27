@@ -21,13 +21,6 @@ Figma MCP + Cursor AI 활용하여 웹페이지 제작
 8. **CTA (행동 유도)**: 콘솔 이동 및 팀 합류 버튼
 9. **Footer (푸터)**: 연락처 및 정보
 
-## 🎨 디자인 시스템
-
-### 색상 팔레트
-- **Primary**: `#0E76C4` - 메인 브랜드 컬러
-- **Gray**: `#AAAAAA`, `#F2F2F2`, `#EAEAEA` - 텍스트 및 배경
-- **Red**: `#D10003` - 경고 및 금지사항 강조
-- **Background**: `#FFFFFF` - 기본 배경
 
 ### 타이포그래피
 - 본문: Noto Sans CJK KR
