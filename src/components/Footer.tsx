@@ -31,13 +31,9 @@ export default function Footer() {
           <div className={`flex flex-col gap-1.5 transition-all duration-700 delay-300 ${
             hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}>
-            <p className="text-xs font-light">경기도 수원시 영통구 원천동 월드컵로 206 아주대학교</p>
+            <p className="text-xs font-light">아주대학교-AOLDA</p>
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2">
-              <span className="text-xs font-light">회장 이나현</span>
-              <div className="hidden sm:block w-px h-1 bg-white"></div>
-              <span className="text-xs font-light">부회장 이나현</span>
-              <div className="hidden sm:block w-px h-1 bg-white"></div>
-              <span className="text-xs font-light">총무 김화균</span>
+              <span className="text-xs font-light">김경은</span>              
             </div>
           </div>
         </div>
@@ -47,7 +43,7 @@ export default function Footer() {
           hasIntersected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}>
           <p className="text-xs text-primary-300">
-            © 2024 AOLDA. Made with ❤️ by AOLDA Team
+            Copyright 2025 AOLDA. All rights reserved.
           </p>
         </div>
       </div>
