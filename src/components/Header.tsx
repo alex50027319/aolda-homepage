@@ -28,7 +28,7 @@ export default function Header() {
         isScrolled ? 'bg-white/90 backdrop-blur-xl shadow-lg' : 'bg-white/60 backdrop-blur-xl shadow-sm'
       }`}
     >
-      <nav className="max-w-[1280px] mx-auto px-6 py-3">
+      <nav className="max-w-[1280px] mx-auto px-6 py-6">
         <div className="flex items-center justify-between gap-[138px]">
           {/* Logo */}
           <div className="flex items-center gap-3">
@@ -49,7 +49,7 @@ export default function Header() {
               <a
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-black hover:text-primary-500 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded"
+                className="text-sm font-bold text-black hover:text-primary-500 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded"
               >
                 {item.label}
               </a>
@@ -57,7 +57,7 @@ export default function Header() {
           </div>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
+          <div className="hidden md:block font-bold">
             <Button
               variant="primary"
               size="sm"

@@ -1,0 +1,14 @@
+name: Github Actions Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  My-Deploy-Job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: first cicd
+        run: echo "Hello, World!"
