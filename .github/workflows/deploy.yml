@@ -1,14 +1,30 @@
 name: Github Actions Deploy
 
+# Event: 실행되는 시점을 설정
+# main이라는 브랜치에 push 될 때 아래 workflow 실행
+
+
 on:
   push:
     branches:
       - main
 
+# Job: 실행할 작업을 설정
+# My-Deploy-Job: 작업 이름
+# runs-on: 실행 환경을 설정
+# ubuntu-latest: 최신 버전의 Ubuntu 운영체제 사용
 jobs:
   My-Deploy-Job:
     runs-on: ubuntu-latest
 
     steps:
+      # Step: 실행할 단계를 설정
+      # name: 단계 이름
+      # run: 실행할 명령어
       - name: first cicd
         run: echo "Hello, World!"
+
+      - name: second cicd
+        run: |
+          echo "Hello, World!"
+          echo "bye, World!"
