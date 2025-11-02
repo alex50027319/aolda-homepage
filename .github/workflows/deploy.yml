@@ -26,5 +26,5 @@ jobs:
 
       - name: second cicd
         run: |
-          echo "Hello, World!"
-          echo "bye, World!"
+          echo $GITHUB_SHA 
+          echo $GITHUB_REPOSITORY
