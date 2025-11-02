@@ -20,16 +20,23 @@ jobs:
       # Step: 실행할 단계를 설정
       # name: 단계 이름
       # run: 실행할 명령어
-      - name: ssh to ec2
-        uses: appleboy/ssh-action@master
+      - name: SSH to EC2 and Deploy
+        uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
-          key: ${{ secrets.EC2_KEY }}
+          key: ${{ secrets.EC2_PRIVATE_KEY }}
+          port: 22
+          timeout: 60s
+          debug: true
           script: |
+            set -e
+            echo "Starting deployment..."
             cd /home/ubuntu/aolda-homepage
             git pull origin main
-            npm i
-            npm run build
-            pm2 kill
+            pnpm install
+            pnpm run build
+            pm2 delete aolda-homepage || true
             pm2 serve dist 3000 --name "aolda-homepage" --spa
+            pm2 save
+            echo "Deployment completed!"
